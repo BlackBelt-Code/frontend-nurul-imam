@@ -3,7 +3,6 @@ import { Pane, TextInputField, Radio, TextareaField, SelectField, Button, AddIco
 import { Col, Container, Row, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../../base/baseurl';
-import history from '../../base/history';
 
 class StudentCreate extends React.Component {
 
@@ -23,8 +22,6 @@ class StudentCreate extends React.Component {
         class_student : '', };
       }
         
-
-
         // Student
         handleFirstNameChange = event => {this.setState({ first_name: event.target.value })}
         handleLastNameChange = event => {this.setState({ last_name: event.target.value })}
@@ -77,7 +74,7 @@ class StudentCreate extends React.Component {
                     class_student : '',
                 });
 
-                history.push("/student");
+                this.props.history.push("/student");
             });
         }
         
