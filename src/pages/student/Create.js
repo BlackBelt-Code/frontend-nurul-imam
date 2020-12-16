@@ -68,11 +68,10 @@ export default class StudentCreate extends React.Component {
                 class_type: this.state.class_type,
                 class_student :  this.state.class_student,
             }
-            console.log(params);
             
-            // axios.get(config.SERVER_IP_ADDR + '/students/Authenticated/store', params).then(response => {
-            //     console.log(response);
-            // });
+            axios.post(config.SERVER_IP_ADDR + 'students/Authenticated/store', params).then(response => {
+                console.log(response);
+            });
         }
         
 
@@ -221,8 +220,8 @@ export default class StudentCreate extends React.Component {
                                 label="Default text input field"
                                 description="This is a description."
                             >
-                                <option value="1" selected onClick={this.handleClassStudentChange} name={this.state.class_student}>Regular</option>
-                                <option value="2" onClick={this.handleClassStudentChange} name={this.state.class_student}>Beasiswa</option>
+                                <option value="1" selected onClick={this.handleClassTypeChange} name={this.state.class_type}>Regular</option>
+                                <option value="2" onClick={this.handleClassTypeChange} name={this.state.class_type}>Beasiswa</option>
                             </SelectField>
                         </Col>
                         <Col>
