@@ -1,39 +1,28 @@
 import React from 'react';
-import { Pane, TextInputField, Radio, TextareaField, SelectField, Button, AddIcon, CrossIcon } from 'evergreen-ui';
+import { Pane, TextInputField, Radio, TextareaField, SelectField, Button, AddIcon, CrossIcon, toaster } from 'evergreen-ui';
 import { Col, Container, Row, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../../base/baseurl';
+import history from '../../base/history';
 
-export default class StudentCreate extends React.Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //       first_name: '',
-    //       last_name: '',
-    //       school_origin: '',
-    //       address: '',
-    //       father_name: '',
-    //       mother_name: '',
-    //       jobs: '',
-    //       contact: '',
-    //       nisn: '',
-    //       class_type:'',
-    //       class_student : '',
-    //     };
-    //   }
-        state = {
-          first_name: '',
-          last_name: '',
-          school_origin: '',
-          address: '',
-          father_name: '',
-          mother_name: '',
-          jobs: '',
-          contact: '',
-          nisn: '',
-          class_type:'',
-          class_student : '',
-        };
+class StudentCreate extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+        first_name: '',
+        last_name: '',
+        school_origin: '',
+        address: '',
+        father_name: '',
+        mother_name: '',
+        jobs: '',
+        contact: '',
+        nisn: '',
+        class_type:'',
+        class_student : '', };
+      }
+        
 
 
         // Student
@@ -52,10 +41,11 @@ export default class StudentCreate extends React.Component {
         handleClassTypeChange = event => {this.setState({ class_type: event.target.value })}
         handleClassStudentChange = event => {this.setState({ class_student: event.target.value })}
 
+
         handleSubmit = event => {
             event.preventDefault();
     
-            var params = {
+            const params = {
                 first_name: this.state.first_name,
                 last_name:  this.state.last_name,
                 school_origin:  this.state.school_origin,
@@ -68,9 +58,26 @@ export default class StudentCreate extends React.Component {
                 class_type: this.state.class_type,
                 class_student :  this.state.class_student,
             }
+
             
             axios.post(config.SERVER_IP_ADDR + 'students/Authenticated/store', params).then(response => {
                 console.log(response);
+                toaster.notify('Entry Student Success .. !!');
+                this.setState({
+                    first_name: '',
+                    last_name: '',
+                    school_origin: '',
+                    address: '',
+                    father_name: '',
+                    mother_name: '',
+                    jobs: '',
+                    contact: '',
+                    nisn: '',
+                    class_type:'',
+                    class_student : '',
+                });
+
+                history.push("/student");
             });
         }
         
@@ -246,3 +253,5 @@ export default class StudentCreate extends React.Component {
         )
     }
 }
+
+export default StudentCreate;

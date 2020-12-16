@@ -10,6 +10,7 @@
     "bootstrap": "^4.5.3",
     "elemental": "^0.6.1",
     "evergreen-ui": "^5.1.2",
+    "history": "^5.0.0",
     "npm-watch": "^0.7.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
