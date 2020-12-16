@@ -79,7 +79,7 @@ class Student extends React.Component {
                                     <Table.TextCell>{row.school_origin}</Table.TextCell>
                                     <Table.TextCell>{row.place}</Table.TextCell>
                                     <Table.TextCell>
-                                        <Button><DuplicateIcon size={10} /></Button>
+                                        <Button><Link to="/student/show"><DuplicateIcon size={10} /></Link></Button>
                                         <Popover
                                             position={Position.BOTTOM_LEFT}
                                             content={
