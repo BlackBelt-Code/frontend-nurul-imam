@@ -1,4 +1,3 @@
-import './App.css';
 import Router from '../route/router';
 import { BrowserRouter } from 'react-router-dom';
 function App() {

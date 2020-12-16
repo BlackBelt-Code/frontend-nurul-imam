@@ -24,7 +24,8 @@ class Student extends React.Component {
     render() {
         return (
             <div>
-                <Col><Pane display="flex" marginTop={10} padding={10} background="tint2" borderRadius={10}>
+                <Col>
+                <Pane display="flex" marginTop={10} padding={10} background="tint2" borderRadius={10}>
                     <Alert variant="info">
                         <Alert.Heading>Hey, nice to see you</Alert.Heading>
                         <p>
