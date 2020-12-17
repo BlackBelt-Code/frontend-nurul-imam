@@ -8,46 +8,16 @@ class Home extends React.Component {
         return (
             <div>
                 <Container>
-                    <Row>
-                        <Col>
-                            <Pane
-                                marginTop={10}
-                                height={520}
-                                width="100%"
-                                display="flex"
-                                alignItems="center"
-                                justifyContent="center"
-                                border="default"
-                            >
-                                <Card style={{ width: '20rem' }}>
-                                    <Card.Body>
-                                        <Alert variant="success">
-                                            <Alert.Heading>Hey, nice to see you</Alert.Heading>
-                                        </Alert>
-                                        <Form>
-                                            <Form.Group controlId="formGroupEmail">
-                                                <InfoSignIcon color="info" marginRight={16} />
-                                                <Form.Label>Email address</Form.Label>
-                                                <TextInput
-                                                    name="text-input-name"
-                                                    placeholder="Text input placeholder..."
-                                                />
-                                            </Form.Group>
-                                            <Form.Group controlId="formGroupPassword">
-                                                <InfoSignIcon color="info" marginRight={16} />
-                                                <Form.Label>Password</Form.Label> <TextInput
-                                                    name="text-input-name"
-                                                    placeholder="Text input placeholder..."
-                                                />
-                                            </Form.Group>
-                                        </Form>
-                                        <Button marginRight={16} appearance="minimal"><Link to="student">Login</Link></Button>
-                                    </Card.Body>
-                                </Card>
-                            </Pane>
+                    <Col xs={12} style={{ marginTop: '10px;'}}>
+                        <Row>
+                            <Card>
+                                <Card.Body>
+                                    <Card.Title>Dashboard</Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </Row>
+                    </Col>
 
-                        </Col>
-                    </Row>
                 </Container>
             </div>
         )

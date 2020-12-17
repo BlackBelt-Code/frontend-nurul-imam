@@ -7,6 +7,7 @@ import Header from '../layouts/navbar';
 import StudentCreate from '../student/Create';
 import history from '../../base/history';
 import ShowStudent from '../student/Show';
+import Auth from '../auth/Auth';
 
 class RouterRoute extends React.Component {
     render() {
@@ -14,10 +15,11 @@ class RouterRoute extends React.Component {
             <div className="header">
                 <Header />
                 <div className="content">
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/student" component={Student} />
-                        <Route exact path="/student/create" component={StudentCreate} />
-                        <Route exact path="/student/show" component={ShowStudent} />
+                    <Route exact path="/" component={Auth} />
+                    <Route exact path="/home" component={Home} />
+                    <Route exact path="/student" component={Student} />
+                    <Route exact path="/student/create" component={StudentCreate} />
+                    <Route exact path="/student/show" component={ShowStudent} />
                 </div>
             </div>
         )
